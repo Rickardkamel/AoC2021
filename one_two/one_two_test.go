@@ -8,6 +8,7 @@ type testInput struct {
 	expectedResult int
 }
 
+// setInputs provides the test with different inputs to run and expected result from each case.
 func setInputs() []testInput {
 	inputs := []testInput{
 		{
@@ -34,6 +35,7 @@ func setInputs() []testInput {
 	return inputs
 }
 
+// TestCountIncreasingSums runs the test for the functionality for getting the result of how many increasing sums we find by using a three-measurement sliding window.
 func TestCountIncreasingSums(t *testing.T) {
 	inputs := setInputs()
 	for i := range inputs {

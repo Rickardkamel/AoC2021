@@ -1,5 +1,6 @@
 package one_two
 
+// CountIncreasingSums utilizes the sliding window algorithm (3-windowed) to find how many sums are larger than the previous sum.
 func CountIncreasingSums(input []int) int {
 	start := 0
 	stop := 2

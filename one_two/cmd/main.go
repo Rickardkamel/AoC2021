@@ -7,12 +7,13 @@ import (
 )
 
 func main() {
-	result := one_two.CountIncreasingSums(DepthData)
+	result := one_two.CountIncreasingSums(depthData)
 
 	fmt.Println("Result for the assignment: ", result)
 }
 
-var DepthData = []int{
+// depthData represents the data that is being used in the assignment. It is a list of data points retreived from a submarine indicating the depth of the bottom of the ocean.
+var depthData = []int{
 	193,
 	197,
 	188,
