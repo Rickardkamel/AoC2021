@@ -2,14 +2,34 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/rickardkamel/AoC2021/one_two"
 )
 
 func main() {
-	result := one_two.CountIncreasingSums(depthData)
+	result := countIncreasingSums(depthData)
 
 	fmt.Println("Result for the assignment: ", result)
+}
+
+// countIncreasingSums utilizes the sliding window algorithm (3-windowed) to find how many sums are larger than the previous sum.
+func countIncreasingSums(input []int) int {
+	start := 0
+	stop := 2
+	counter := 0
+	var previousSum int
+	for i := range input {
+		start = i
+		end := i + stop
+		if end < len(input) {
+			sum := input[start] + input[start+1] + input[end]
+
+			if i != 0 && sum > previousSum {
+				counter += 1
+			}
+			previousSum = sum
+		}
+	}
+
+	return counter
 }
 
 // depthData represents the data that is being used in the assignment. It is a list of data points retreived from a submarine indicating the depth of the bottom of the ocean.
